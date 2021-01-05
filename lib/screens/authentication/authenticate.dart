@@ -13,9 +13,9 @@ class _AuthenticateState extends State<Authenticate> {
   bool showSignIn = true;
 
   void toggle() {
-    setState(() {
-      return showSignIn = !showSignIn;
-    });
+
+    setState(() => showSignIn = !showSignIn);
+
   }
 
   @override

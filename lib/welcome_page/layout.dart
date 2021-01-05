@@ -1,12 +1,20 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
+import 'package:flybuy_ecommerce_project/model/user.dart';
+import 'package:flybuy_ecommerce_project/screens/authentication/log_in.dart';
+import 'package:flybuy_ecommerce_project/screens/authentication/sign_up.dart';
 import 'package:flybuy_ecommerce_project/welcome_page/components/slider.dart';
 import 'package:flybuy_ecommerce_project/welcome_page/components/welcome_text.dart';
+import 'package:provider/provider.dart';
 
 class welcomepage extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
+    final user=Provider.of<Users>(context);
     Sizeconfig().init(context);
     return Scaffold(
       body: SafeArea(
@@ -34,7 +42,15 @@ class welcomepage extends StatelessWidget {
                     ),
                     color: Colors.blue,
                     onPressed: () {
-                      Navigator.pushNamed(context, 'Log_in');
+                      Navigator.push(context, MaterialPageRoute(builder: (context)
+                      {
+                        return Provider<Users>.value(
+                          value: user,
+                          child: login_ui(),
+
+                        );
+                      }
+                      ) );
                     },
                     child: Text(
                       'Log in',
@@ -50,7 +66,20 @@ class welcomepage extends StatelessWidget {
                   width: Sizeconfig.blockSizeHorizontal * 80,
                   height: Sizeconfig.blockSizeVertical * 8,
                   child: FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+
+                      Navigator.push(context, MaterialPageRoute(builder: (context)
+                      {
+                        return Provider<Users>.value(
+                          value: user,
+                          child: Sign_up(),
+
+                        );
+
+                      }
+                      ) );
+
+                    },
                     child: Text(
                       'Sign up',
                       style: TextStyle(
