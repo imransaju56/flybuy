@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
-
-
+import 'package:flybuy_ecommerce_project/welcome_page/components/slider.dart';
+import 'package:flybuy_ecommerce_project/welcome_page/components/welcome_text.dart';
 
 class welcomepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+    Sizeconfig().init(context);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -15,83 +16,51 @@ class welcomepage extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: size.height*0.05,
+                  height: Sizeconfig.blockSizeVertical*5,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Welcome to ',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        Text(
-                          'Flybuy',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: size.height * 0.012,
-                    ),
-                    Text(
-                      'Explore Us',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                  ],
-                ),
-                Image.asset(
-                  "assets/images/load.png",
-                  height: size.height * 0.7,
-                  width: size.width * 0.7,
-                ),
+                welcome_text(),
+                slider_wel(),
+
                 SizedBox(
-                  width: size.width * 0.7,
-                  height: size.height * 0.09,
+                  height: Sizeconfig.blockSizeVertical*5,
+                ),
+
+                SizedBox(
+                  width: Sizeconfig.blockSizeHorizontal * 80,
+                  height: Sizeconfig.blockSizeVertical * 8,
                   child: FlatButton(
-
-
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
-                    color: loadingpage_color,
-                    onPressed: () {},
+                    color: Colors.blue,
+                    onPressed: () {
+                      Navigator.pushNamed(context, 'Log_in');
+                    },
                     child: Text(
                       'Log in',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
                 ),
-
                 SizedBox(
-                  width: size.width * 0.7,
-                  height: size.height * 0.09,
+                  width: Sizeconfig.blockSizeHorizontal * 80,
+                  height: Sizeconfig.blockSizeVertical * 8,
                   child: FlatButton(
-
-
                     onPressed: () {},
                     child: Text(
                       'Sign up',
                       style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
+                        color: Colors.black38.withOpacity(0.7),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
                 ),
-
-
               ],
             ),
           ),
@@ -100,4 +69,3 @@ class welcomepage extends StatelessWidget {
     );
   }
 }
-

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "213300003789",
+    "firebase_url": "https://professional-1dd85.firebaseio.com",
+    "project_id": "professional-1dd85",
+    "storage_bucket": "professional-1dd85.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213300003789:android:1b4b17e16cba35cca7ba84",
+        "android_client_info": {
+          "package_name": "com.example.fitguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213300003789-jl2tpvnjk1u8nflbdg4qji1gq714lef4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsRONuiWa1EpmckujjQnkzQmed_rRPut8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213300003789-jl2tpvnjk1u8nflbdg4qji1gq714lef4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213300003789:android:2ccdb7b146a22519a7ba84",
+        "android_client_info": {
+          "package_name": "com.example.flybuy_ecommerce_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213300003789-jl2tpvnjk1u8nflbdg4qji1gq714lef4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsRONuiWa1EpmckujjQnkzQmed_rRPut8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213300003789-jl2tpvnjk1u8nflbdg4qji1gq714lef4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

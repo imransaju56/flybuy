@@ -1,0 +1,10 @@
+1.git init.
+2.git add .
+3.git config --global user.email "imran565774@gmail.com"
+4.git config --global user.name "imransaju56"
+5.git commit -m "fly_buy_first_commit"
+6.git remote add origin https://github.com/imransaju56/flybuy.git
+7.git push -u origin master
+8.git pull
+9.
+10.
