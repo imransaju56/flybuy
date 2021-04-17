@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD:lib/screens/home/Bottom_navigation/bottom_navigation.dart
-=======
 import 'package:flybuy_ecommerce_project/Screens/Cart/Cart_Screen.dart';
->>>>>>> tempo:lib/Screens/Home/Bottom_navigation/bottom_navigation.dart
+
 
 class bottom_nav extends StatefulWidget {
   @override
@@ -36,12 +34,9 @@ class _bottom_navState extends State<bottom_nav> {
               color: Colors.blue,
             ),
           ),
-<<<<<<< HEAD:lib/screens/home/Bottom_navigation/bottom_navigation.dart
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: Colors.blue,
-=======
+
+
+
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
@@ -53,7 +48,6 @@ class _bottom_navState extends State<bottom_nav> {
                 Icons.shopping_cart,
                 color: Colors.blue,
               ),
->>>>>>> tempo:lib/Screens/Home/Bottom_navigation/bottom_navigation.dart
             ),
           ),
           IconButton(
