@@ -4,6 +4,10 @@ import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 class price_with_review extends StatefulWidget {
   @override
   _price_with_reviewState createState() => _price_with_reviewState();
+
+  num price,discount;
+  price_with_review({this.price,this.discount});
+
 }
 
 class _price_with_reviewState extends State<price_with_review> {
@@ -15,7 +19,7 @@ class _price_with_reviewState extends State<price_with_review> {
         Padding(
           padding: const EdgeInsets.fromLTRB(40.0, 0.0, 0.0, 0.0),
           child: Text(
-            "USD 120",
+            'BDT ${widget.price}',
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,
@@ -27,7 +31,7 @@ class _price_with_reviewState extends State<price_with_review> {
           width: Sizeconfig.blockSizeHorizontal * 4,
         ),
         Text(
-          "\$20",
+          "${widget.discount}%",
           style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w600,

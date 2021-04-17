@@ -50,7 +50,7 @@ class _available_sizesState extends State<available_sizes> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: loadingpage_color,
+                      color: theme_color,
                     ),
                   ),
                   SizedBox(
@@ -61,7 +61,7 @@ class _available_sizesState extends State<available_sizes> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: loadingpage_color,
+                      color: theme_color,
                     ),
                   ),
                   SizedBox(
@@ -72,7 +72,7 @@ class _available_sizesState extends State<available_sizes> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: loadingpage_color,
+                      color: theme_color,
                     ),
                   ),
                   SizedBox(
@@ -83,7 +83,7 @@ class _available_sizesState extends State<available_sizes> {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: loadingpage_color,
+                      color: theme_color,
                     ),
                   ),
                   SizedBox(

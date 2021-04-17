@@ -21,7 +21,7 @@ class _product_details_sectionState extends State<product_details_section> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
           ),
-          color: loadingpage_color,
+          color: theme_color,
           onPressed: () {},
           child: Text(
             'Details',

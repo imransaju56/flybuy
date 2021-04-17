@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
+<<<<<<< HEAD
+=======
+import 'package:flybuy_ecommerce_project/model/user.dart';
+import 'package:flybuy_ecommerce_project/screens/authentication/Log_in.dart';
+import 'package:flybuy_ecommerce_project/screens/authentication/Sign_up.dart';
+>>>>>>> tempo
 import 'package:flybuy_ecommerce_project/welcome_page/components/slider.dart';
 import 'package:flybuy_ecommerce_project/welcome_page/components/welcome_text.dart';
 
