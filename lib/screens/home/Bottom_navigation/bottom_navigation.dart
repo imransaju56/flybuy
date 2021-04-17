@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy_ecommerce_project/screens/cart/cart.dart';
 
 class bottom_nav extends StatefulWidget {
   @override
@@ -33,20 +32,10 @@ class _bottom_navState extends State<bottom_nav> {
               color: Colors.blue,
             ),
           ),
-          GestureDetector(
-
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                return Mycart();
-
-              }));
-
-            },
-            child: IconButton(
-              icon: Icon(
-                Icons.shopping_cart,
-                color: Colors.blue,
-              ),
+          IconButton(
+            icon: Icon(
+              Icons.shopping_cart,
+              color: Colors.blue,
             ),
           ),
           IconButton(
