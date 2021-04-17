@@ -5,6 +5,8 @@ import 'package:flybuy_ecommerce_project/constants/colors.dart';
 class image_des extends StatefulWidget {
   @override
   _image_desState createState() => _image_desState();
+  String image;
+  image_des({this.image});
 }
 
 class _image_desState extends State<image_des> {
@@ -14,8 +16,8 @@ class _image_desState extends State<image_des> {
     return Column(
       children: [
         Container(
-          child: Image.asset(
-            'assets/images/hoodie.png',
+          child: Image.network(
+            widget.image,
             height: Sizeconfig.blockSizeHorizontal * 75,
             width: Sizeconfig.blockSizeVertical * 75,
           ),
@@ -37,7 +39,7 @@ class _image_desState extends State<image_des> {
               height: 15,
               width: 15,
               decoration: BoxDecoration(
-                  color: loadingpage_color,
+                  color: Colors.blue,
                   shape: BoxShape.circle),
             ),
             SizedBox(

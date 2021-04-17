@@ -39,7 +39,7 @@ class _Bottom_navState extends State<Bottom_nav> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(0.0),
             ),
-            color: loadingpage_color,
+            color: Colors.blue,
             onPressed: () {},
             child: Text(
               'Buy Now',

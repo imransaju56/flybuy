@@ -19,7 +19,7 @@ class _review_sectionState extends State<review_section> {
         child: FlatButton(
           shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: loadingpage_color,
+              color: theme_color,
             ),
             borderRadius: BorderRadius.circular(15.0),
           ),

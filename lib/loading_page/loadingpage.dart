@@ -7,15 +7,16 @@ class loading extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: loadingpage_color,
+      backgroundColor: Colors.white,
       body: (Container(
         child: Center(
             child: Text(
               'Flybuy',
               style: TextStyle(
                 fontSize: size.width * 0.1,
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
+                color: Colors.blue,
+                fontWeight: FontWeight.w600,
+                height: 0.7,
               ),
             )),
       )),
