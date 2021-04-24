@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/BottomNavigation.dart';
-import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/CheckoutItems.dart';
+import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_Items.dart';
+
 
 class CheckoutScreen extends StatefulWidget {
   @override

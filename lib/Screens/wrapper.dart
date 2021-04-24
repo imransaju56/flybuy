@@ -1,5 +1,6 @@
-import 'package:flybuy_ecommerce_project/Screens/Checkout/CheckoutScreen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
+import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 import 'package:flybuy_ecommerce_project/model/user.dart';
 import 'package:flybuy_ecommerce_project/screens/authentication/Authenticate.dart';
@@ -18,7 +19,8 @@ class Wrapper extends StatelessWidget {
       return
       // Home();
         // Checkout_Screen();
-      ProfileScreen();
+      // ProfileScreen();
+      Myorders();
     }
   }
 }
