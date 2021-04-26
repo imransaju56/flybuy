@@ -16,6 +16,8 @@ import 'package:flybuy_ecommerce_project/services/auth.dart';
 import 'Bottom_navigation/bottom_navigation.dart';
 
 class Home extends StatelessWidget {
+  static const routename= '/Home';
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

@@ -17,10 +17,10 @@ class Wrapper extends StatelessWidget {
       return Authenticate();
     } else {
       return
-      // Home();
-        // Checkout_Screen();
+      Home();
+      //   CheckoutScreen();
       // ProfileScreen();
-      Myorders();
+      // Myorders();
     }
   }
 }

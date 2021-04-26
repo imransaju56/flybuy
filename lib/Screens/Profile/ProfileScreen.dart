@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/Bottom_nav.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
-import 'package:flybuy_ecommerce_project/Screens/Buttons/BottomNavigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/menu_card_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';
@@ -12,6 +9,7 @@ class ProfileScreen extends StatefulWidget {
   dynamic email='saju565774@gmail.com';
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
+  static const routename='/ProfileScreen';
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {

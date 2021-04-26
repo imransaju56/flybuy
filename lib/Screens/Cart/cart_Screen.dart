@@ -7,6 +7,7 @@ import 'package:flybuy_ecommerce_project/screens/cart/components/total_products_
 class Mycart extends StatefulWidget {
   @override
   _MycartState createState() => _MycartState();
+  static const routename='/Mycart';
 }
 
 class _MycartState extends State<Mycart> {

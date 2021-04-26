@@ -7,6 +7,8 @@ import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_It
 class CheckoutScreen extends StatefulWidget {
   @override
   _CheckoutScreenState createState() => _CheckoutScreenState();
+  static const routename='/CheckoutScreen';
+
 }
 
 class _CheckoutScreenState extends State<CheckoutScreen> {

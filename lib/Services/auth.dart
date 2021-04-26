@@ -1,8 +1,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flybuy_ecommerce_project/model/user.dart';
 
-class Authentication_service {
+class Authentication_service with ChangeNotifier {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Users _userFromFirebaseUser(User user) {

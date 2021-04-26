@@ -1,18 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/Bottom_nav.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/Details_and_review_section/details_description.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/Details_and_review_section/product_details_section.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/available_colors.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/available_sizes.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/image_slider.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/price%20with%20review_button.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/product_title.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/review_section.dart';
-import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce_project/lib/Description_page/components/appbar.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/details_description.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/product_details_section.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/appbar.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/available_colors.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/available_sizes.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/image_slider.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/price%20with%20review_button.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/product_title.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/review_section.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
-import 'package:flybuy_ecommerce_project/constants/colors.dart';
-import 'package:flybuy_ecommerce_project/screens/home/Featured/discount.dart';
+
 
 class description extends StatefulWidget {
   @override
@@ -20,8 +17,8 @@ class description extends StatefulWidget {
 
   String title, image, offer;
   num price, discount;
-
   description({this.title, this.image, this.price, this.discount, this.offer});
+  static const routename='/Description';
 }
 
 class _descriptionState extends State<description> {
