@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Screens/Authentication/authenticate.dart';
+import 'package:flybuy_ecommerce_project/Screens/Authentication/log_in.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
-import 'package:flybuy_ecommerce_project/constants/colors.dart';
-import 'package:flybuy_ecommerce_project/model/user.dart';
-import 'package:flybuy_ecommerce_project/screens/authentication/Log_in.dart';
-import 'package:flybuy_ecommerce_project/screens/authentication/Sign_up.dart';
 import 'package:flybuy_ecommerce_project/welcome_page/components/slider.dart';
 import 'package:flybuy_ecommerce_project/welcome_page/components/welcome_text.dart';
 
-class welcomepage extends StatelessWidget {
+class welcomepage extends StatefulWidget {
+  @override
+  _welcomepageState createState() => _welcomepageState();
+  dynamic showSignIn;
+  welcomepage({this.showSignIn});
+}
+
+class _welcomepageState extends State<welcomepage> {
   @override
   Widget build(BuildContext context) {
     Sizeconfig().init(context);
@@ -36,9 +41,13 @@ class welcomepage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     color: Colors.blue,
-                    onPressed: () {
-                      Navigator.pushNamed(context, 'Log_in');
-                    },
+                    onPressed: () => Navigator.pushAndRemoveUntil
+                      
+                      (context, MaterialPageRoute(builder: (context)=> Authenticate(showSignIn:widget.showSignIn ,)), (route) => false),
+                      // Navigator.pop(context);
+
+
+
                     child: Text(
                       'Log in',
                       style: TextStyle(
@@ -52,8 +61,7 @@ class welcomepage extends StatelessWidget {
                 SizedBox(
                   width: Sizeconfig.blockSizeHorizontal * 80,
                   height: Sizeconfig.blockSizeVertical * 8,
-                  child: FlatButton(
-                    onPressed: () {},
+                  child: FlatButton(onPressed: () {},
                     child: Text(
                       'Sign up',
                       style: TextStyle(

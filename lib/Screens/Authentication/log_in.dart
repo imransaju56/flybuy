@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
@@ -121,10 +122,16 @@ class _login_uiState extends State<login_ui> {
                                 print("login successful");
 
                                 if (result == null) {
-                                  error = 'Please enter a valid email address';
+                                  error = result;
                                 } else {
-                                  print("Log in Successful");
+
+
+                                  print('error is ${result}');
+                                  return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (contex)=> Home()), (route) => false);
+
                                 }
+
+                                
                               }
                             },
                             child: Text(

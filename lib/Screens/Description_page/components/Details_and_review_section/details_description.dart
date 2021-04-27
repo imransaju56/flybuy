@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/Details_and_review_section/product_details_section.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 
 class Details_view_des extends StatefulWidget {

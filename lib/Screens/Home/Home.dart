@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
-import 'package:flybuy_ecommerce_project/model/user.dart';
 import 'package:flybuy_ecommerce_project/screens/authentication/Authenticate.dart';
 import 'package:flybuy_ecommerce_project/screens/home/Featured/product_card.dart';
 import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce_project/lib/screens/home/Categories/Categories.dart';

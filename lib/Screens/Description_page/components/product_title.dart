@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flybuy_ecommerce_project/Description_page/components/image_slider.dart';
-import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce_project/lib/Description_page/components/appbar.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 class title_and_like extends StatefulWidget {

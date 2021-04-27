@@ -7,20 +7,27 @@ import 'package:firebase_core/firebase_core.dart';
 class Authenticate extends StatefulWidget {
   @override
   _AuthenticateState createState() => _AuthenticateState();
+
+  dynamic showSignIn;
+  Authenticate({this.showSignIn});
+  static const routename='/Authenticate';
+
+
+
 }
 
 class _AuthenticateState extends State<Authenticate> {
-  bool showSignIn = true;
+
 
   void toggle() {
     setState(() {
-      return showSignIn = !showSignIn;
+      return widget.showSignIn = !widget.showSignIn;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    if (showSignIn) {
+    if (widget.showSignIn) {
       return login_ui(toggleview: toggle);
     } else {
       return Sign_up(toggleview: toggle);

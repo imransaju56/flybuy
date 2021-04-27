@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flybuy_ecommerce_project/Description_page/description_page.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/description_page.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/screens/home/Featured/Best_seller_tag.dart';
 import 'package:flybuy_ecommerce_project/screens/home/Featured/Product_image.dart';

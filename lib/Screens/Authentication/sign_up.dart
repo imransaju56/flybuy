@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
-import 'package:flybuy_ecommerce_project/model/user.dart';
+
 
 class Sign_up extends StatefulWidget {
   final Function toggleview;
