@@ -6,16 +6,40 @@ import 'package:flybuy_ecommerce_project/constants/colors.dart';
 class loading extends StatefulWidget {
   @override
   _loadingState createState() => _loadingState();
+  dynamic show;
+  loading({this.show});
   static const routename='/loading';
 
 }
 
 class _loadingState extends State<loading> {
+
+  void loader() async {
+
+    await Future.delayed(Duration(seconds: 4),(){
+
+      Navigator.pushAndRemoveUntil(context,
+
+
+          MaterialPageRoute(builder: (context)=>
+              Wrapper(show: widget.show,)), (route) => false);
+
+
+
+    });
+
+
+  }
+
+
+
+
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Navigator.of(context).pushNamed(Wrapper.routename);
+    loader();
     
   }
   

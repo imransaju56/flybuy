@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Constants/colors.dart';
+import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
+import 'package:provider/provider.dart';
 
 class total_product_amount extends StatefulWidget {
   @override
@@ -9,8 +12,10 @@ class total_product_amount extends StatefulWidget {
 class _total_product_amountState extends State<total_product_amount> {
   @override
   Widget build(BuildContext context) {
+    var cart=Provider.of<Cart>(context);
     Sizeconfig().init(context);
     return Card(
+      color: theme_color,
 
       elevation: 0.5,
       child: Row(
@@ -24,9 +29,9 @@ class _total_product_amountState extends State<total_product_amount> {
                 height: Sizeconfig.blockSizeVertical * 4.5,
               ),
               Text(
-                '11',
+                '${cart.itemCount}',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.white,
                   fontSize: 15,
                 ),
               ),
@@ -36,7 +41,7 @@ class _total_product_amountState extends State<total_product_amount> {
               Text(
                 'Total Products',
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 18,
                 ),
@@ -53,9 +58,9 @@ class _total_product_amountState extends State<total_product_amount> {
                 height: Sizeconfig.blockSizeVertical * 4.5,
               ),
               Text(
-                'BDT 220',
+                'ট ${cart.totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.white,
                   fontSize: 15,
                 ),
               ),
@@ -65,7 +70,7 @@ class _total_product_amountState extends State<total_product_amount> {
               Text(
                 'Total Amount',
                 style: TextStyle(
-                  color: Colors.blue,
+                  color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 18,
                 ),

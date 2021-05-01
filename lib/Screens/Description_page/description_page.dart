@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
+import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/details_description.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/product_details_section.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/appbar.dart';
@@ -9,21 +11,23 @@ import 'package:flybuy_ecommerce_project/Screens/Description_page/components/pri
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/product_title.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/review_section.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
+import 'package:provider/provider.dart';
 
 
 class description extends StatefulWidget {
   @override
   _descriptionState createState() => _descriptionState();
 
-  String title, image, offer;
+  String productId,title, image, offer;
   num price, discount;
-  description({this.title, this.image, this.price, this.discount, this.offer});
+  description({this.productId,this.title, this.image, this.price, this.discount, this.offer});
   static const routename='/Description';
 }
 
 class _descriptionState extends State<description> {
   @override
   Widget build(BuildContext context) {
+    final cart=Provider.of<Cart>(context,listen: false);
     Sizeconfig().init(context);
     return Scaffold(
       bottomNavigationBar: Row(
@@ -35,7 +39,13 @@ class _descriptionState extends State<description> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              onPressed: () {},
+              onPressed: () {
+                cart.addItems(widget.productId, widget.image, widget.title
+                    ,widget.price);
+
+                print('items passed');
+
+              },
               child: Text(
                 'Add to Cart',
                 style: TextStyle(
@@ -53,7 +63,15 @@ class _descriptionState extends State<description> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               color: Colors.blue,
-              onPressed: () {},
+              onPressed: () {
+
+                cart.addcheckoutItems(widget.productId, widget.image, widget.title
+                    ,widget.price);
+
+                  Navigator.of(context).pushReplacementNamed(CheckoutScreen.routename);
+
+
+              },
               child: Text(
                 'Buy Now',
                 style: TextStyle(

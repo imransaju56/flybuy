@@ -1,40 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Cart/components/cart_card.dart';
+import 'package:provider/provider.dart';
 
 class Check_items extends StatefulWidget {
   @override
   _Check_itemsState createState() => _Check_itemsState();
+  static const routename='/check_items';
 }
 
 class _Check_itemsState extends State<Check_items> {
   @override
   Widget build(BuildContext context) {
+    var cart= Provider.of<Cart>(context);
     return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+
         children: [
           Row(
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    'Imran Hasan',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
+              Flexible(
+                flex: 4,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(
+                      height: 10,
                     ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                      '395/1, Terokhadia Poschim Para, Rajpara,Rajshahi, \nRajshahi Canttonment, Rajshahi, Rajshahi '),
-                ],
+                    Text(
+                      'Imran Hasan',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                        '395/1, Terokhadia Poschim Para, Rajpara,Rajshahi, Rajshahi Canttonment, Rajshahi, Rajshahi ',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+
+
+                    ),
+                  ],
+                ),
               ),
               Spacer(),
               Icon(
@@ -75,11 +88,18 @@ class _Check_itemsState extends State<Check_items> {
                   ),
                 ],
               ),
+              Spacer(),
+              Icon(
+                Icons.edit,
+                color: Colors.blue,
+              ),
+
             ],
           ),
           SizedBox(
-            height: 15,
+            height: 10,
           ),
+
           Text(
             'Items',
             style: TextStyle(
@@ -90,23 +110,44 @@ class _Check_itemsState extends State<Check_items> {
           SizedBox(
             height: 10,
           ),
-          for (int i = 0; i < 2; i++) cart_card(),
+
+          ListView.builder(
+
+
+              shrinkWrap: true,
+              itemCount: cart.item.length,
+              itemBuilder: (ctx,index)=>cart_card(
+                  cart.item.values.toList()[index].productId,
+                  cart.item.values.toList()[index].images,
+                  cart.item.values.toList()[index].title,
+                  cart.item.values.toList()[index].price,
+                  cart.item.values.toList()[index].quantity)),
+
+          // for (int i = 0; i < 2; i++) cart_card(),
           SizedBox(
             height: 10,
           ),
-          Text(
-            'Estimated Day of Delivery',
-            style: TextStyle(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Text(
-            'Arrival Between 7-10 Mar',
-            style: TextStyle(
-              color: Colors.green[600],
+          Padding(
+            padding: const EdgeInsets.only(left: 8,right: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Estimated Day of Delivery',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'Arrival Between 7-10 Mar',
+                  style: TextStyle(
+                    color: Colors.green[600],
+                  ),
+                ),
+              ],
             ),
           ),
           SizedBox(

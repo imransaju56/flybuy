@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
+import 'package:flybuy_ecommerce_project/DataModel/product_data.dart';
 import 'package:flybuy_ecommerce_project/DataModel/user.dart';
 import 'package:flybuy_ecommerce_project/Loading_page/loadingpage.dart';
 import 'package:flybuy_ecommerce_project/Screens/Authentication/log_in.dart';
 import 'package:flybuy_ecommerce_project/Screens/Authentication/sign_up.dart';
 import 'package:flybuy_ecommerce_project/Screens/Cart/cart_Screen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Bottom_nav.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/description_page.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/Featured/product_card.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
@@ -29,10 +35,18 @@ class MyApp extends StatelessWidget {
         StreamProvider.value(
             value: Authentication_service().user,
             ),
+
+        StreamProvider.value(
+          value: ProductData().getProductData(),
+        ),
+        ChangeNotifierProvider(create: (ctx)=> Cart()),
+
+
       ],
       child: MaterialApp(
-        home: Wrapper(show: true,),
+        home:loading(show: true,),
         routes: {
+
           Home.routename: (ctx) => Home(),
           description.routename: (ctx) => description(),
           Mycart.routename: (ctx) => Mycart(),
@@ -40,6 +54,10 @@ class MyApp extends StatelessWidget {
           Myorders.routename: (ctx) => Myorders(),
           ProfileScreen.routename: (ctx) => ProfileScreen(),
           loading.routename:(ctx)=> loading(),
+          product_card.routename:(ctx)=>product_card(),
+          Wrapper.routename:(ctx)=>Wrapper(),
+          Bottom_nav.routename:(ctx)=>Bottom_nav(),
+          Check_items.routename:(ctx)=>Check_items(),
         },
       ),
     );

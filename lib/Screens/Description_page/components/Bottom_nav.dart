@@ -1,12 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
+import 'package:provider/provider.dart';
 
 class Bottom_nav extends StatefulWidget {
+
+
+
+
   @override
   _Bottom_navState createState() => _Bottom_navState();
+  static const routename='desbuttons';
 }
 
 class _Bottom_navState extends State<Bottom_nav> {
@@ -22,7 +29,11 @@ class _Bottom_navState extends State<Bottom_nav> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(0.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+
+
+
+            },
             child: Text(
               'Add to Cart',
               style: TextStyle(
