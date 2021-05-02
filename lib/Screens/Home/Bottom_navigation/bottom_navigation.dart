@@ -10,17 +10,7 @@ class _bottom_navState extends State<bottom_nav> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.height * 0.07,
-      decoration: BoxDecoration(color: Colors.white, boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(0.2),
-          offset: Offset(0, 0),
-          blurRadius: 10,
-        ),
-      ]),
-      child: Container(
-        margin: EdgeInsets.fromLTRB(20, 0.0, 20, 0.0),
+    return Card(
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -66,7 +56,6 @@ class _bottom_navState extends State<bottom_nav> {
             ],
           ),
         ),
-      ),
     );
   }
 }

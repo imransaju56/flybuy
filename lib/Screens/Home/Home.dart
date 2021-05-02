@@ -16,9 +16,14 @@ import 'package:flybuy_ecommerce_project/services/auth.dart';
 import 'package:provider/provider.dart';
 import 'Bottom_navigation/bottom_navigation.dart';
 
-class Home extends StatelessWidget {
-  static const routename= '/Home';
+class Home extends StatefulWidget {
+  static const routename = '/Home';
 
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     var data = Provider.of<List<ProductModel>>(context, listen: true);
@@ -26,7 +31,6 @@ class Home extends StatelessWidget {
     Sizeconfig().init(context);
     final Authentication_service _auth = Authentication_service();
     return Scaffold(
-      bottomNavigationBar: bottom_nav(),
       body: SafeArea(
         child: ListView(
           shrinkWrap: true,
@@ -52,10 +56,7 @@ class Home extends StatelessWidget {
                       height: 20,
                     ),
                     featured(),
-
-
-                    data==null ? Text('Loading') : product_card() ,
-
+                    data == null ? Text('Loading') : product_card(),
                     SizedBox(
                       height: 15,
                     ),
