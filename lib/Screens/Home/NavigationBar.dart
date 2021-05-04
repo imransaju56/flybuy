@@ -3,12 +3,12 @@ import 'package:flybuy_ecommerce_project/Screens/Cart/cart_Screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 
-class HomeWithStackedItems extends StatefulWidget {
+class NavStackItems extends StatefulWidget {
   @override
-  _HomeWithStackedItemsState createState() => _HomeWithStackedItemsState();
+  _NavStackItemsState createState() => _NavStackItemsState();
 }
 
-class _HomeWithStackedItemsState extends State<HomeWithStackedItems> {
+class _NavStackItemsState extends State<NavStackItems> {
   int selectedIndex = 0;
 
   void onItemTapped(int index) {
@@ -27,29 +27,26 @@ class _HomeWithStackedItemsState extends State<HomeWithStackedItems> {
           Mycart(),
           Center(child: Text('Pending')),
           ProfileScreen(),
-
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: '',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
-            label: '',
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            label: '',
+            label: 'Chat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: '',
+            label: 'Profile',
           ),
         ],
         currentIndex: selectedIndex,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
+import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/menu_card_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
@@ -18,10 +19,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: Text('Profile',style: TextStyle(
+          color: Colors.black,
+        ),),
       ),
       body: SafeArea(
         child: ListView(
+          shrinkWrap: true,
           children: [
             Container(
               // margin: EdgeInsets.only(left: 15, right: 15),
@@ -80,9 +84,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     margin: EdgeInsets.all(25.0),
                     child: Column(
                       children: [
-                        ProfileOptions(
-                          optionName: 'My Orders',
-                          svgName: 'assets/icons/shopping.svg',
+                        GestureDetector(
+
+                          child: ProfileOptions(
+                            optionName: 'My Orders',
+                            svgName: 'assets/icons/shopping.svg',
+                          ),
+                          onTap: (){
+                            Navigator.of(context).pushNamed(Myorders.routename);
+                          },
                         ),
                         ProfileOptions(
                           optionName: 'Purchase History',

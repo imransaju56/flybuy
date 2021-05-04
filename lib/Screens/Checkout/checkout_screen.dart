@@ -17,8 +17,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My cart'),
-
+        title: Text('Checkout',style: TextStyle(
+          color: Colors.black,
+        ),),
       ),
       bottomNavigationBar: BottomNavigation(
         text: 'Continue',

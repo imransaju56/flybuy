@@ -20,10 +20,11 @@ class _MycartState extends State<Mycart> {
     Sizeconfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Cart'),
-        backgroundColor: theme_color,
+        title: Text('My Cart',style: TextStyle(
+          color: Colors.black,
+        ),),
       ),
-      backgroundColor: Colors.white,
+
       body: SafeArea(
         child: Column(
           children:[

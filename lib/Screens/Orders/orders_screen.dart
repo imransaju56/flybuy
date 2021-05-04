@@ -8,30 +8,27 @@ import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_i
 class Myorders extends StatefulWidget {
   @override
   _MyordersState createState() => _MyordersState();
-  static const routename= '/Myorders';
+  static const routename = '/Myorders';
 }
 
 class _MyordersState extends State<Myorders> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('My Orders',style: TextStyle(
+          color: Colors.black,
+        ),),
+      ),
       body: SafeArea(
         child: ListView(
-          children:[
+          children: [
             Column(
               children: [
-                AppbarCustom(
-                  title: 'My Orders',
-                ),
 
-                for(int i=0;i<5;i++)
-                Orders_items(),
-
+                for (int i = 0; i < 5; i++) Orders_items(),
               ],
             ),
-
           ],
         ),
       ),

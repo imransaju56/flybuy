@@ -13,23 +13,31 @@ import 'package:flybuy_ecommerce_project/Screens/Description_page/components/rev
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:provider/provider.dart';
 
-
 class description extends StatefulWidget {
   @override
   _descriptionState createState() => _descriptionState();
 
-  String productId,title, image, offer;
+  String productId, title, image, offer;
   num price, discount;
-  description({this.productId,this.title, this.image, this.price, this.discount, this.offer});
-  static const routename='/Description';
+
+  description(
+      {this.productId,
+      this.title,
+      this.image,
+      this.price,
+      this.discount,
+      this.offer});
+
+  static const routename = '/Description';
 }
 
 class _descriptionState extends State<description> {
   @override
   Widget build(BuildContext context) {
-    final cart=Provider.of<Cart>(context,listen: false);
+    final cart = Provider.of<Cart>(context, listen: false);
     Sizeconfig().init(context);
     return Scaffold(
+      appBar: AppBar(),
       bottomNavigationBar: Row(
         children: [
           SizedBox(
@@ -40,11 +48,10 @@ class _descriptionState extends State<description> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               onPressed: () {
-                cart.addItems(widget.productId, widget.image, widget.title
-                    ,widget.price);
+                cart.addItems(
+                    widget.productId, widget.image, widget.title, widget.price);
 
                 print('items passed');
-
               },
               child: Text(
                 'Add to Cart',
@@ -64,13 +71,11 @@ class _descriptionState extends State<description> {
               ),
               color: Colors.blue,
               onPressed: () {
+                cart.addcheckoutItems(
+                    widget.productId, widget.image, widget.title, widget.price);
 
-                cart.addcheckoutItems(widget.productId, widget.image, widget.title
-                    ,widget.price);
-
-                  Navigator.of(context).pushReplacementNamed(CheckoutScreen.routename);
-
-
+                Navigator.of(context)
+                    .pushReplacementNamed(CheckoutScreen.routename);
               },
               child: Text(
                 'Buy Now',
@@ -91,10 +96,6 @@ class _descriptionState extends State<description> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                des_Appbar(),
-                SizedBox(
-                  height: Sizeconfig.blockSizeVertical * 1,
-                ),
                 Container(
                   height: Sizeconfig.blockSizeVertical * 42,
                   width: double.infinity,

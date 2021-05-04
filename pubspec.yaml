@@ -33,6 +33,7 @@ dependencies:
   flutter_spinkit: "^4.1.2"
   flutter_svg: ^0.21.0+1
   provider: ^5.0.0
+  lottie: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -55,12 +56,14 @@ flutter:
     - assets/images/HalloweenOffer.jpg
     - assets/images/demo_pic.png
     - assets/images/hoodie.png
+    - assets/images/trusted.png
     - assets/icons/message.svg
     - assets/icons/payment.svg
     - assets/icons/receipt.svg
     - assets/icons/reviews.svg
     - assets/icons/settings.svg
     - assets/icons/shopping.svg
+    - assets/animation/loader.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

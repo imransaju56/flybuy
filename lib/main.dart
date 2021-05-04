@@ -13,6 +13,7 @@ import 'package:flybuy_ecommerce_project/Screens/Description_page/description_pa
 import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Featured/product_card.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/wrapper.dart';
@@ -33,31 +34,42 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         StreamProvider.value(
-            value: Authentication_service().user,
-            ),
-
+          value: Authentication_service().user,
+        ),
         StreamProvider.value(
           value: ProductData().getProductData(),
         ),
-        ChangeNotifierProvider(create: (ctx)=> Cart()),
-
-
+        ChangeNotifierProvider(create: (ctx) => Cart()),
       ],
       child: MaterialApp(
-        home:loading(show: true,),
-        routes: {
+        theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            elevation: 0,
+            color: Colors.white,
+            actionsIconTheme: IconThemeData(
+              color: Colors.black,
+            ),
+            iconTheme: IconThemeData(
+              color: Colors.black,
+            ),
 
+          ),
+        ),
+        home: loading(
+          show: true,
+        ),
+        routes: {
           Home.routename: (ctx) => Home(),
           description.routename: (ctx) => description(),
           Mycart.routename: (ctx) => Mycart(),
           CheckoutScreen.routename: (ctx) => CheckoutScreen(),
           Myorders.routename: (ctx) => Myorders(),
           ProfileScreen.routename: (ctx) => ProfileScreen(),
-          loading.routename:(ctx)=> loading(),
-          product_card.routename:(ctx)=>product_card(),
-          Wrapper.routename:(ctx)=>Wrapper(),
-          Bottom_nav.routename:(ctx)=>Bottom_nav(),
-          Check_items.routename:(ctx)=>Check_items(),
+          loading.routename: (ctx) => loading(),
+          product_card.routename: (ctx) => product_card(),
+          Wrapper.routename: (ctx) => Wrapper(),
+          Bottom_nav.routename: (ctx) => Bottom_nav(),
+          Check_items.routename: (ctx) => Check_items(),
         },
       ),
     );
