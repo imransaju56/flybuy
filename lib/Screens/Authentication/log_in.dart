@@ -4,9 +4,9 @@ import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
 
-
 class login_ui extends StatefulWidget {
   final Function toggleview;
+
   login_ui({this.toggleview});
 
   @override
@@ -17,7 +17,6 @@ class _login_uiState extends State<login_ui> {
   String Email = '';
   String password = '';
   String error = '';
-
 
   bool _obscureText = true;
   final _formkey = GlobalKey<FormState>();
@@ -92,8 +91,7 @@ class _login_uiState extends State<login_ui> {
                                 });
                               },
                             ),
-                            enabledBorder:
-                            UnderlineInputBorder(
+                            enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                     color: Color.fromRGBO(216, 216, 216, 1))),
                             labelText: 'Password',
@@ -124,14 +122,13 @@ class _login_uiState extends State<login_ui> {
                                 if (result == null) {
                                   error = result;
                                 } else {
-
-
                                   print('error is ${result}');
-                                  return Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (contex)=> Home()), (route) => false);
-
+                                  return Navigator.pushAndRemoveUntil(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (contex) => Home()),
+                                      (route) => false);
                                 }
-
-                                
                               }
                             },
                             child: Text(
@@ -149,11 +146,9 @@ class _login_uiState extends State<login_ui> {
                       ],
                     ),
                     GestureDetector(
-
-                      onTap: (){
+                      onTap: () {
                         widget.toggleview();
                       },
-
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
-import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/menu_card_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';

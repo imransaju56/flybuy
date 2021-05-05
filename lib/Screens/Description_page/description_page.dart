@@ -22,11 +22,11 @@ class description extends StatefulWidget {
 
   description(
       {this.productId,
-      this.title,
-      this.image,
-      this.price,
-      this.discount,
-      this.offer});
+        this.title,
+        this.image,
+        this.price,
+        this.discount,
+        this.offer});
 
   static const routename = '/Description';
 }
@@ -131,24 +131,24 @@ class _descriptionState extends State<description> {
                 ),
                 widget.offer.isNotEmpty
                     ? Column(
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
-                            child: Text(
-                              "${widget.offer}",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.green[600],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: Sizeconfig.blockSizeVertical * 1.5,
-                          ),
-                        ],
-                      )
+                  children: [
+                    Padding(
+                      padding:
+                      const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                      child: Text(
+                        "${widget.offer}",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.green[600],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: Sizeconfig.blockSizeVertical * 1.5,
+                    ),
+                  ],
+                )
                     : SizedBox(),
                 available_colors(),
                 SizedBox(

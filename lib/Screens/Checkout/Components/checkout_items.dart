@@ -40,7 +40,7 @@ class _Check_itemsState extends State<Check_items> {
                       height: 5,
                     ),
                     Text(
-                        '395/1, Terokhadia Poschim Para, Rajpara,Rajshahi, Rajshahi Canttonment, Rajshahi, Rajshahi ',
+                      '395/1, Terokhadia Poschim Para, Rajpara,Rajshahi, Rajshahi Canttonment, Rajshahi, Rajshahi ',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
 

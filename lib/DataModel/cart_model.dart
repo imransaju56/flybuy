@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flybuy_ecommerce_project/DataModel/user.dart';
 
 class CartItem {
   final String productId;
@@ -19,11 +22,11 @@ class Cart with ChangeNotifier {
   }
 
   int get itemCount {
-    int total=0;
+    int total = 0;
     _items.forEach((key, value) {
-      total+=value.quantity;
+      total += value.quantity;
     });
-   return total;
+    return total;
   }
 
   double get totalAmount {
@@ -34,16 +37,15 @@ class Cart with ChangeNotifier {
     return total;
   }
 
-  void addItems(
-    String productId,
-    String images,
-    String title,
-    num price,
-  ) {
+  void addItems(String productId,
+      String images,
+      String title,
+      num price,) {
     if (_items.containsKey(productId)) {
       _items.update(
           productId,
-          (existingCardtItem) => CartItem(
+              (existingCardtItem) =>
+              CartItem(
                 productId: existingCardtItem.productId,
                 images: existingCardtItem.images,
                 title: existingCardtItem.title,
@@ -53,7 +55,8 @@ class Cart with ChangeNotifier {
     } else {
       _items.putIfAbsent(
           productId,
-          () => CartItem(
+              () =>
+              CartItem(
                 productId: productId,
                 images: images,
                 title: title,
@@ -65,32 +68,32 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
-  void addcheckoutItems(
-    String productId,
-    String images,
-    String title,
-    num price,
-  ) {
-    _items.putIfAbsent(
-        productId,
-        () => CartItem(
-              productId: productId,
-              images: images,
-              title: title,
-              price: price,
-              quantity: 1,
-            ));
+    void addcheckoutItems(String productId,
+        String images,
+        String title,
+        num price,) {
+      _items.putIfAbsent(
+          productId,
+              () =>
+              CartItem(
+                productId: productId,
+                images: images,
+                title: title,
+                price: price,
+                quantity: 1,
+              ));
 
-    notifyListeners();
+      notifyListeners();
+    }
+
+    void removeItem(String Id) {
+      _items.remove(Id);
+      notifyListeners();
+    }
+
+    void clear() {
+      _items = {};
+      notifyListeners();
+    }
   }
 
-  void removeItem(String Id) {
-    _items.remove(Id);
-    notifyListeners();
-  }
-
-  void clear() {
-    _items = {};
-    notifyListeners();
-  }
-}

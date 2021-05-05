@@ -5,7 +5,6 @@ import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
-import 'package:flybuy_ecommerce_project/Screens/Payment/PaymentScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 
 import 'package:flutter/material.dart';
@@ -35,7 +34,7 @@ class _WrapperState extends State<Wrapper> {
       );
     } else {
       return
-        PaymentScreen();
+        NavStackItems();
       //   CheckoutScreen();
       // ProfileScreen();
       // Myorders();

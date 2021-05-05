@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Constants/colors.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/BottomNavigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_Items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Featured/Featured_full_screen/components/appbar.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/PaymentScreen.dart';
 
 
 class CheckoutScreen extends StatefulWidget {
@@ -21,9 +23,22 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           color: Colors.black,
         ),),
       ),
-      bottomNavigationBar: BottomNavigation(
-        text: 'Continue',
+      bottomSheet: InkWell(
+        onTap: (){
+          Navigator.of(context).pushNamed(PaymentScreen.routename);
+
+        },
+        child: Container(
+          height: kToolbarHeight,
+            width: double.infinity,
+            child: Center(child: Text('Proceed to Payment',style: TextStyle(
+              color: Colors.white,
+
+            ),)),
+          color: theme_color,
+        ),
       ),
+
 
       body: SafeArea(
         child: Container(

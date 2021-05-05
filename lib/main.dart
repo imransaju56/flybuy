@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/Payment/SaveCard/saveCard.dart';
 import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/DataModel/product_data.dart';
 import 'package:flybuy_ecommerce_project/DataModel/user.dart';
@@ -10,11 +11,14 @@ import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_it
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Bottom_nav.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/description_page.dart';
-import 'package:flybuy_ecommerce_project/Screens/Home/Bottom_navigation/bottom_navigation.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Featured/product_card.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/Components/CardOptions.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/Components/NewpaymentInput.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/Components/SaveCard.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/PaymentScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/wrapper.dart';
 import 'package:flybuy_ecommerce_project/Services/auth.dart';
@@ -40,6 +44,7 @@ class MyApp extends StatelessWidget {
           value: ProductData().getProductData(),
         ),
         ChangeNotifierProvider(create: (ctx) => Cart()),
+        ChangeNotifierProvider(create:(ctx)=> SaveCreditCard()),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -70,6 +75,10 @@ class MyApp extends StatelessWidget {
           Wrapper.routename: (ctx) => Wrapper(),
           Bottom_nav.routename: (ctx) => Bottom_nav(),
           Check_items.routename: (ctx) => Check_items(),
+          PaymentScreen.routename:(ctx)=>PaymentScreen(),
+          InputNew.routename:(ctx)=>InputNew(),
+          SavedCards.routename:(ctx)=>SavedCards(),
+          HomePage.routename:(ctx)=>HomePage(),
         },
       ),
     );

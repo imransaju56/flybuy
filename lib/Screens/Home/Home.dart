@@ -14,7 +14,6 @@ import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce
 import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce_project/lib/screens/home/Searchbar/searchbar.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
 import 'package:provider/provider.dart';
-import 'Bottom_navigation/bottom_navigation.dart';
 
 class Home extends StatefulWidget {
   static const routename = '/Home';
