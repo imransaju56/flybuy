@@ -123,8 +123,8 @@ class _InputNewState extends State<InputNew> {
             CreditCard stripecard = CreditCard(
               name: cardHolderName,
               number: cardNumber,
-              expMonth: int.parse(expirySplit[0]),
-              expYear: int.parse(expirySplit[1]),
+              expMonth: int.parse(expiryDate.split('/')[0]),
+              expYear: int.parse(expiryDate.split('/')[1]),
             );
 
             var response = await StripeService.payViaExistingCard(
