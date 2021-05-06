@@ -13,7 +13,7 @@ class _product_imageState extends State<product_image> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child:Image.network(widget.image),
+        child:Image.network(widget.image,scale: 4,),
 
     );
   }

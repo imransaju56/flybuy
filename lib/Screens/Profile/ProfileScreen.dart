@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/Components/SaveCard.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/menu_card_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
@@ -18,9 +19,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile',style: TextStyle(
-          color: Colors.black,
-        ),),
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
       ),
       body: SafeArea(
         child: ListView(
@@ -83,35 +87,61 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     margin: EdgeInsets.all(25.0),
                     child: Column(
                       children: [
-                        GestureDetector(
-
+                        InkWell(
                           child: ProfileOptions(
                             optionName: 'My Orders',
                             svgName: 'assets/icons/shopping.svg',
                           ),
+
                           onTap: (){
+
                             Navigator.of(context).pushNamed(Myorders.routename);
                           },
                         ),
-                        ProfileOptions(
-                          optionName: 'Purchase History',
-                          svgName: 'assets/icons/receipt.svg',
+                        InkWell(
+
+                          onTap: (){
+
+                          },
+                          child: ProfileOptions(
+                            optionName: 'Purchase History',
+                            svgName: 'assets/icons/receipt.svg',
+                          ),
                         ),
-                        ProfileOptions(
-                          optionName: 'Messages',
-                          svgName: 'assets/icons/message.svg',
+                        InkWell(
+                          onTap:() {},
+                          child: ProfileOptions(
+                            optionName: 'Messages',
+                            svgName: 'assets/icons/message.svg',
+                          ),
                         ),
-                        ProfileOptions(
-                          optionName: 'Reviews',
-                          svgName: 'assets/icons/reviews.svg',
+                        InkWell(
+                          onTap: (){
+
+
+                          },
+                          child: ProfileOptions(
+                            optionName: 'Reviews',
+                            svgName: 'assets/icons/reviews.svg',
+                          ),
                         ),
-                        ProfileOptions(
-                          optionName: 'Payment Options',
-                          svgName: 'assets/icons/payment.svg',
+                        InkWell(
+                          onTap: (){
+                            Navigator.of(context).pushNamed(SavedCards.routename);
+
+
+                          },
+                          child: ProfileOptions(
+                            optionName: 'Payment Options',
+                            svgName: 'assets/icons/payment.svg',
+                          ),
                         ),
-                        ProfileOptions(
-                          optionName: 'Settings',
-                          svgName: 'assets/icons/settings.svg',
+                        InkWell(
+                          onTap: (){},
+                          child: ProfileOptions(
+                            optionName: 'Settings',
+                            svgName: 'assets/icons/settings.svg',
+                          ),
                         ),
                       ],
                     ),

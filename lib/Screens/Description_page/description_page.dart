@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/Firebase/FirebaseDataModel.dart';
 import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
+import 'package:flybuy_ecommerce_project/DataModel/user.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/details_description.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Details_and_review_section/product_details_section.dart';
@@ -18,15 +22,17 @@ class description extends StatefulWidget {
   _descriptionState createState() => _descriptionState();
 
   String productId, title, image, offer;
-  num price, discount;
+  num price, discount, quantity;
 
-  description(
-      {this.productId,
-        this.title,
-        this.image,
-        this.price,
-        this.discount,
-        this.offer});
+  description({
+    this.productId,
+    this.title,
+    this.image,
+    this.price,
+    this.discount,
+    this.offer,
+    this.quantity = 0,
+  });
 
   static const routename = '/Description';
 }
@@ -34,7 +40,100 @@ class description extends StatefulWidget {
 class _descriptionState extends State<description> {
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      widget.quantity += 1;
+    });
+
+    // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    // final User user = _firebaseAuth.currentUser;
+    // dynamic db = FirebaseFirestore.instance
+    //     .collection('AddUserItems')
+    //     .doc(user.email)
+    //     .collection('ItemList')
+    //     .doc(widget.productId);
+    //
+    // Future<bool> addtoCart() async {
+    //   bool exists = false;
+    //   try {
+    //     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    //     final User user = _firebaseAuth.currentUser;
+    //     await FirebaseFirestore.instance
+    //         .collection('AddUserItems')
+    //         .doc(user.email)
+    //         .collection('ItemList')
+    //         .doc(widget.productId)
+    //         .get()
+    //         .then((value) => {
+    //               if (value.exists)
+    //                 {
+    //                   db.update(<String, dynamic>{
+    //                     'quantity': FieldValue.increment(1),
+    //                   }),
+    //                   SetOptions(merge: true),
+    //                   print(exists = true),
+    //                 }
+    //               else
+    //                 {
+    //                   db.set(<String, dynamic>{
+    //                     'produtId': widget.productId,
+    //                     'title': widget.title,
+    //                     'image': widget.image,
+    //                     'price': widget.price,
+    //                     'discont': widget.discount,
+    //                     'offer': widget.offer,
+    //                     'quantity': FieldValue.increment(1),
+    //                   }),
+    //                   print(exists = false),
+    //                 }
+    //             });
+    //     return exists;
+    //   } catch (e) {
+    //     return false;
+    //   }
+    // }
+
+    // Future<bool> Buynow() async {
+    //   bool exists = false;
+    //   try {
+    //     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+    //     final User user = _firebaseAuth.currentUser;
+    //     await FirebaseFirestore.instance
+    //         .collection('AddUserItems')
+    //         .doc(user.email)
+    //         .collection('ItemList')
+    //         .doc(widget.productId)
+    //         .get()
+    //         .then((value) => {
+    //       if (value.exists)
+    //         {
+    //           db.update(<String, dynamic>{
+    //             'quantity': FieldValue.increment(0),
+    //           }),
+    //           SetOptions(merge: true),
+    //           print(exists = true),
+    //         }
+    //       else
+    //         {
+    //           db.set(<String, dynamic>{
+    //             'produtId': widget.productId,
+    //             'title': widget.title,
+    //             'image': widget.image,
+    //             'price': widget.price,
+    //             'discont': widget.discount,
+    //             'offer': widget.offer,
+    //             'quantity': FieldValue.increment(1),
+    //           }),
+    //           print(exists = false),
+    //         }
+    //     });
+    //     return exists;
+    //   } catch (e) {
+    //     return false;
+    //   }
+    // }
+
     final cart = Provider.of<Cart>(context, listen: false);
+    final cartfr=Provider.of<cartFire>(context, listen: false);
     Sizeconfig().init(context);
     return Scaffold(
       appBar: AppBar(),
@@ -47,11 +146,13 @@ class _descriptionState extends State<description> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(0.0),
               ),
-              onPressed: () {
-                cart.addItems(
-                    widget.productId, widget.image, widget.title, widget.price);
+              onPressed: () async {
 
-                print('items passed');
+                cartfr.addtoCart(widget.productId, widget.title,
+                    widget.image, widget.offer, widget.price, widget.discount, widget.quantity);
+
+                // cart.addItems(
+                //     widget.productId, widget.image, widget.title, widget.price);
               },
               child: Text(
                 'Add to Cart',
@@ -70,9 +171,12 @@ class _descriptionState extends State<description> {
                 borderRadius: BorderRadius.circular(0.0),
               ),
               color: Colors.blue,
-              onPressed: () {
-                cart.addcheckoutItems(
-                    widget.productId, widget.image, widget.title, widget.price);
+              onPressed: () async {
+
+
+                cartfr.buynow(widget.productId, widget.title, widget.image,
+                    widget.offer, widget.price, widget.discount, widget.quantity);
+
 
                 Navigator.of(context)
                     .pushReplacementNamed(CheckoutScreen.routename);
@@ -131,24 +235,24 @@ class _descriptionState extends State<description> {
                 ),
                 widget.offer.isNotEmpty
                     ? Column(
-                  children: [
-                    Padding(
-                      padding:
-                      const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
-                      child: Text(
-                        "${widget.offer}",
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.green[600],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: Sizeconfig.blockSizeVertical * 1.5,
-                    ),
-                  ],
-                )
+                        children: [
+                          Padding(
+                            padding:
+                                const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                            child: Text(
+                              "${widget.offer}",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.green[600],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: Sizeconfig.blockSizeVertical * 1.5,
+                          ),
+                        ],
+                      )
                     : SizedBox(),
                 available_colors(),
                 SizedBox(

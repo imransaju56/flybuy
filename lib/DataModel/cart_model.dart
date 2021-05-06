@@ -37,15 +37,16 @@ class Cart with ChangeNotifier {
     return total;
   }
 
-  void addItems(String productId,
-      String images,
-      String title,
-      num price,) {
+  void addItems(
+    String productId,
+    String images,
+    String title,
+    num price,
+  ) {
     if (_items.containsKey(productId)) {
       _items.update(
           productId,
-              (existingCardtItem) =>
-              CartItem(
+          (existingCardtItem) => CartItem(
                 productId: existingCardtItem.productId,
                 images: existingCardtItem.images,
                 title: existingCardtItem.title,
@@ -55,8 +56,7 @@ class Cart with ChangeNotifier {
     } else {
       _items.putIfAbsent(
           productId,
-              () =>
-              CartItem(
+          () => CartItem(
                 productId: productId,
                 images: images,
                 title: title,
@@ -68,32 +68,32 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
-    void addcheckoutItems(String productId,
-        String images,
-        String title,
-        num price,) {
-      _items.putIfAbsent(
-          productId,
-              () =>
-              CartItem(
-                productId: productId,
-                images: images,
-                title: title,
-                price: price,
-                quantity: 1,
-              ));
+  void addcheckoutItems(
+    String productId,
+    String images,
+    String title,
+    num price,
+  ) {
+    _items.putIfAbsent(
+        productId,
+        () => CartItem(
+              productId: productId,
+              images: images,
+              title: title,
+              price: price,
+              quantity: 1,
+            ));
 
-      notifyListeners();
-    }
-
-    void removeItem(String Id) {
-      _items.remove(Id);
-      notifyListeners();
-    }
-
-    void clear() {
-      _items = {};
-      notifyListeners();
-    }
+    notifyListeners();
   }
 
+  void removeItem(String Id) {
+    _items.remove(Id);
+    notifyListeners();
+  }
+
+  void clear() {
+    _items = {};
+    notifyListeners();
+  }
+}

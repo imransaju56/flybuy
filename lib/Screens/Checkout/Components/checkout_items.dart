@@ -111,17 +111,10 @@ class _Check_itemsState extends State<Check_items> {
             height: 10,
           ),
 
-          ListView.builder(
 
 
-              shrinkWrap: true,
-              itemCount: cart.item.length,
-              itemBuilder: (ctx,index)=>cart_card(
-                  cart.item.values.toList()[index].productId,
-                  cart.item.values.toList()[index].images,
-                  cart.item.values.toList()[index].title,
-                  cart.item.values.toList()[index].price,
-                  cart.item.values.toList()[index].quantity)),
+
+              cart_card(),
 
           // for (int i = 0; i < 2; i++) cart_card(),
           SizedBox(

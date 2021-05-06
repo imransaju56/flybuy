@@ -33,24 +33,7 @@ class _MycartState extends State<Mycart> {
           SizedBox(
             height: Sizeconfig.blockSizeVertical * 2,
           ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-            child: ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              children: [
-                ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: cart.item.length,
-                    itemBuilder: (ctx, index) => cart_card(
-                        cart.item.values.toList()[index].productId,
-                        cart.item.values.toList()[index].images,
-                        cart.item.values.toList()[index].title,
-                        cart.item.values.toList()[index].price,
-                        cart.item.values.toList()[index].quantity)),
-              ],
-            ),
-          ),
+          cart_card(),
         ]),
       ),
     );

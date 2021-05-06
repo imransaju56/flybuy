@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/DataModel/Firebase/FirebaseDataModel.dart';
 import 'package:flybuy_ecommerce_project/DataModel/Payment/SaveCard/saveCard.dart';
 import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/DataModel/product_data.dart';
@@ -7,6 +8,7 @@ import 'package:flybuy_ecommerce_project/Loading_page/loadingpage.dart';
 import 'package:flybuy_ecommerce_project/Screens/Authentication/log_in.dart';
 import 'package:flybuy_ecommerce_project/Screens/Authentication/sign_up.dart';
 import 'package:flybuy_ecommerce_project/Screens/Cart/cart_Screen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Cart/components/total_products_amount.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Bottom_nav.dart';
@@ -45,6 +47,7 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider(create: (ctx) => Cart()),
         ChangeNotifierProvider(create:(ctx)=> SaveCreditCard()),
+        ChangeNotifierProvider(create: (ctx)=>cartFire()),
       ],
       child: MaterialApp(
         theme: ThemeData(
@@ -79,6 +82,7 @@ class MyApp extends StatelessWidget {
           InputNew.routename:(ctx)=>InputNew(),
           SavedCards.routename:(ctx)=>SavedCards(),
           HomePage.routename:(ctx)=>HomePage(),
+          total_product_amount.routename:(ctx)=>total_product_amount(),
         },
       ),
     );

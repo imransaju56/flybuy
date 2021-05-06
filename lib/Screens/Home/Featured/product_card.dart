@@ -69,8 +69,10 @@ class _product_cardState extends State<product_card> {
                               )
                             : SizedBox(),
                         Spacer(),
-                        product_image(
-                          image: '${data[index].image}',
+                        ClipRect(
+                          child: product_image(
+                            image: '${data[index].image}',
+                          ),
                         ),
                         Spacer(),
                         product_details(
