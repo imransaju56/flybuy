@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flybuy_ecommerce_project/DataModel/product_data_model.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/BestSeller/title.dart';
+import 'package:flybuy_ecommerce_project/Screens/Search/searchbar.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:flybuy_ecommerce_project/screens/authentication/Authenticate.dart';
@@ -31,24 +33,27 @@ class _HomeState extends State<Home> {
     final Authentication_service _auth = Authentication_service();
     return Scaffold(
       body: SafeArea(
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            Column(
-              children: [
-                Column(
+        child: Container(
+          margin: EdgeInsets.all(14),
+          child: Column(
+            children: [
+              InkWell(
+                  onTap: () async {
+                    await Navigator
+                        .of(context)
+                        .push(MaterialPageRoute<dynamic>(builder: (BuildContext context) {
+                      return Search();
+                    }));
+                  },
+                  child: Searchbar()),
+
+              Flexible(
+                child: ListView(
+                  shrinkWrap: true,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        children: [
-                          Searchbar(),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          slider(),
-                        ],
-                      ),
+                    slider(),
+                    SizedBox(
+                      height: 15,
                     ),
                     categories(),
                     SizedBox(
@@ -59,11 +64,12 @@ class _HomeState extends State<Home> {
                     SizedBox(
                       height: 15,
                     ),
+                    Bestseller_title(),
                   ],
                 ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

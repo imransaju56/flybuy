@@ -42,7 +42,7 @@ class _NavStackItemsState extends State<NavStackItems> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.message),
-            label: 'Chat',
+            label: 'Message',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

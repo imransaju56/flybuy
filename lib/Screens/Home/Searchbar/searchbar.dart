@@ -44,15 +44,11 @@ class _SearchbarState extends State<Searchbar> {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Search Your Product',
-                      hintStyle:
-                          TextStyle(color: Colors.grey.withOpacity(0.95)),
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
-                  ),
+                  child: Text('Search Your Product',style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.black38,
+
+                  ),),
                 ),
               ),
             ],

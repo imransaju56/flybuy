@@ -4,10 +4,13 @@ import 'package:flybuy_ecommerce_project/Screens/Authentication/authenticate.dar
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/Searchbar/searchbar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Screens/Search/additemstoSearch.dart';
+import 'package:flybuy_ecommerce_project/Screens/Search/searchbar.dart';
 import 'package:flybuy_ecommerce_project/Welcome_page/layout.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +37,9 @@ class _WrapperState extends State<Wrapper> {
       );
     } else {
       return
+          // Search();
         NavStackItems();
+        // AddsomeProduct();
       //   CheckoutScreen();
       // ProfileScreen();
       // Myorders();

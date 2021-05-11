@@ -22,6 +22,7 @@ import 'package:flybuy_ecommerce_project/Screens/Payment/Components/NewpaymentIn
 import 'package:flybuy_ecommerce_project/Screens/Payment/Components/SaveCard.dart';
 import 'package:flybuy_ecommerce_project/Screens/Payment/PaymentScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Search/searchbar.dart';
 import 'package:flybuy_ecommerce_project/Screens/wrapper.dart';
 import 'package:flybuy_ecommerce_project/Services/auth.dart';
 import 'package:flybuy_ecommerce_project/Welcome_page/layout.dart';

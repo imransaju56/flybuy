@@ -70,7 +70,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
         child: ListTile(
           contentPadding: EdgeInsets.only(left: 30, right: 30),
           leading: Text(
-            'Subtotal',
+            'Total Amount',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

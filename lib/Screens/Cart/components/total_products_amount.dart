@@ -85,7 +85,7 @@ class _total_product_amountState extends State<total_product_amount> {
                       height: Sizeconfig.blockSizeVertical * 4.5,
                     ),
                     Text(
-                      'ট ${sum}'.to,
+                      'ট ${sum}',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 15,

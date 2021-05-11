@@ -13,15 +13,12 @@ class _categoriesState extends State<categories> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
-            child: Text(
-              ' Categories',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: Colors.black.withOpacity(0.6),
-              ),
+          Text(
+            ' Categories',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w700,
+              color: Colors.black.withOpacity(0.6),
             ),
           ),
           SizedBox(
@@ -31,9 +28,6 @@ class _categoriesState extends State<categories> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                SizedBox(
-                  width: 25,
-                ),
                 SizedBox(
                   width: size.width * 0.3,
                   height: size.height * 0.06,
