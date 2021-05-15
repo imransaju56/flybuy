@@ -8,6 +8,8 @@ class PaymentScreen extends StatefulWidget {
   @override
   _PaymentScreenState createState() => _PaymentScreenState();
   static const routename='Payment';
+  dynamic total;
+  PaymentScreen({this.total});
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
@@ -77,7 +79,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             ),
           ),
           trailing: Text(
-            'ট 250',
+            'ট ${widget.total}',
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

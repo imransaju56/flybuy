@@ -6,10 +6,12 @@ import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 class NavStackItems extends StatefulWidget {
   @override
   _NavStackItemsState createState() => _NavStackItemsState();
+  static const routename='/StackedItems';
 }
 
 class _NavStackItemsState extends State<NavStackItems> {
   int selectedIndex = 0;
+
 
   void onItemTapped(int index) {
     setState(() {

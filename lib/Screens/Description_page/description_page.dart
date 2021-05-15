@@ -44,95 +44,6 @@ class _descriptionState extends State<description> {
       widget.quantity += 1;
     });
 
-    // final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-    // final User user = _firebaseAuth.currentUser;
-    // dynamic db = FirebaseFirestore.instance
-    //     .collection('AddUserItems')
-    //     .doc(user.email)
-    //     .collection('ItemList')
-    //     .doc(widget.productId);
-    //
-    // Future<bool> addtoCart() async {
-    //   bool exists = false;
-    //   try {
-    //     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-    //     final User user = _firebaseAuth.currentUser;
-    //     await FirebaseFirestore.instance
-    //         .collection('AddUserItems')
-    //         .doc(user.email)
-    //         .collection('ItemList')
-    //         .doc(widget.productId)
-    //         .get()
-    //         .then((value) => {
-    //               if (value.exists)
-    //                 {
-    //                   db.update(<String, dynamic>{
-    //                     'quantity': FieldValue.increment(1),
-    //                   }),
-    //                   SetOptions(merge: true),
-    //                   print(exists = true),
-    //                 }
-    //               else
-    //                 {
-    //                   db.set(<String, dynamic>{
-    //                     'produtId': widget.productId,
-    //                     'title': widget.title,
-    //                     'image': widget.image,
-    //                     'price': widget.price,
-    //                     'discont': widget.discount,
-    //                     'offer': widget.offer,
-    //                     'quantity': FieldValue.increment(1),
-    //                   }),
-    //                   print(exists = false),
-    //                 }
-    //             });
-    //     return exists;
-    //   } catch (e) {
-    //     return false;
-    //   }
-    // }
-
-    // Future<bool> Buynow() async {
-    //   bool exists = false;
-    //   try {
-    //     final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-    //     final User user = _firebaseAuth.currentUser;
-    //     await FirebaseFirestore.instance
-    //         .collection('AddUserItems')
-    //         .doc(user.email)
-    //         .collection('ItemList')
-    //         .doc(widget.productId)
-    //         .get()
-    //         .then((value) => {
-    //       if (value.exists)
-    //         {
-    //           db.update(<String, dynamic>{
-    //             'quantity': FieldValue.increment(0),
-    //           }),
-    //           SetOptions(merge: true),
-    //           print(exists = true),
-    //         }
-    //       else
-    //         {
-    //           db.set(<String, dynamic>{
-    //             'produtId': widget.productId,
-    //             'title': widget.title,
-    //             'image': widget.image,
-    //             'price': widget.price,
-    //             'discont': widget.discount,
-    //             'offer': widget.offer,
-    //             'quantity': FieldValue.increment(1),
-    //           }),
-    //           print(exists = false),
-    //         }
-    //     });
-    //     return exists;
-    //   } catch (e) {
-    //     return false;
-    //   }
-    // }
-
-    final cart = Provider.of<Cart>(context, listen: false);
     final cartfr=Provider.of<cartFire>(context, listen: false);
     Sizeconfig().init(context);
     return Scaffold(
@@ -233,27 +144,27 @@ class _descriptionState extends State<description> {
                 SizedBox(
                   height: Sizeconfig.blockSizeVertical * 1.5,
                 ),
-                widget.offer.isNotEmpty
-                    ? Column(
-                        children: [
-                          Padding(
-                            padding:
-                                const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
-                            child: Text(
-                              "${widget.offer}",
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.green[600],
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: Sizeconfig.blockSizeVertical * 1.5,
-                          ),
-                        ],
-                      )
-                    : SizedBox(),
+                // widget.offer.isNotEmpty
+                //     ? Column(
+                //         children: [
+                //           Padding(
+                //             padding:
+                //                 const EdgeInsets.fromLTRB(40.0, 0.0, 40.0, 0.0),
+                //             child: Text(
+                //               "${widget.offer}",
+                //               style: TextStyle(
+                //                 fontSize: 14,
+                //                 fontWeight: FontWeight.w500,
+                //                 color: Colors.green[600],
+                //               ),
+                //             ),
+                //           ),
+                //           SizedBox(
+                //             height: Sizeconfig.blockSizeVertical * 1.5,
+                //           ),
+                //         ],
+                //       )
+                //     : SizedBox(),
                 available_colors(),
                 SizedBox(
                   height: Sizeconfig.blockSizeVertical * 1.5,

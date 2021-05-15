@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Screens/Authentication/sign_up.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
@@ -126,7 +128,7 @@ class _login_uiState extends State<login_ui> {
                                   return Navigator.pushAndRemoveUntil(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (contex) => Home()),
+                                          builder: (contex) => NavStackItems()),
                                       (route) => false);
                                 }
                               }
@@ -147,7 +149,11 @@ class _login_uiState extends State<login_ui> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        widget.toggleview();
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (contex) => Sign_up()),
+                                (route) => false);
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,

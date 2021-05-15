@@ -1,21 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+class SeeAlsoTitle extends StatelessWidget {
+  const SeeAlsoTitle({Key key}) : super(key: key);
 
-
-class featured extends StatefulWidget {
-  @override
-  _featuredState createState() => _featuredState();
-}
-
-class _featuredState extends State<featured> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Row(
       children: [
         Text(
-          ' Featured Products',
+          ' See also',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.w700,
@@ -24,10 +17,8 @@ class _featuredState extends State<featured> {
         ),
         Spacer(),
         InkWell(
-          onTap: (){
+          onTap: () {
             // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Featured_full()));
-
-
           },
           child: Text(
             'See all',
@@ -38,9 +29,6 @@ class _featuredState extends State<featured> {
             ),
           ),
         ),
-
-
-
       ],
     );
   }

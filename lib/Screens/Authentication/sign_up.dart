@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flybuy_ecommerce_project/Screens/Authentication/log_in.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 import 'package:flybuy_ecommerce_project/services/auth.dart';
 
-
 class Sign_up extends StatefulWidget {
   final Function toggleview;
+
   Sign_up({this.toggleview});
+
   @override
   _Sign_upState createState() => _Sign_upState();
 }
 
 class _Sign_upState extends State<Sign_up> {
-  String Name= '';
+  String Name = '';
   String Email = '';
   String password = '';
   String error = '';
@@ -50,31 +53,9 @@ class _Sign_upState extends State<Sign_up> {
                       ),
                       TextFormField(
                         validator: (val) =>
-                            val.isEmpty ? 'Please Enter Your Name' : null,
-                        onChanged: (val) {
-                          setState(() {
-                            Name=val;
-                          });
-
-                        },
-                        decoration: InputDecoration(
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color.fromRGBO(216, 216, 216, 1),
-                            ),
-                          ),
-                          labelText: 'Name',
-                          labelStyle: TextStyle(fontSize: 12),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      TextFormField(
-                        validator: (val) =>
                             val.isEmpty ? 'Enter email address' : null,
-                        onChanged: (val){
-                          Email=val;
+                        onChanged: (val) {
+                          Email = val;
                         },
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
@@ -92,13 +73,11 @@ class _Sign_upState extends State<Sign_up> {
                       TextFormField(
                         validator: (val) =>
                             val.length < 6 ? 'Enter password 6+ long' : null,
-                        onChanged: (val){
+                        onChanged: (val) {
                           setState(() {
-                            password=val;
+                            password = val;
                           });
-
                         },
-
                         decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -124,13 +103,20 @@ class _Sign_upState extends State<Sign_up> {
                           onPressed: () async {
                             if (_formkey.currentState.validate()) {
                               dynamic result = await _authservice
-                                  .Register_with_email_password(Email, password);
+                                  .Register_with_email_password(
+                                      Email, password);
                               if (result == null) {
                                 setState(() {
-                                  error='Please supply a valid email address';
+                                  error = 'Please supply a valid email address';
                                 });
                               } else {
                                 print('Registration Successful');
+                                print('error is ${result}');
+                                return Navigator.pushAndRemoveUntil(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (contex) => NavStackItems()),
+                                    (route) => false);
                               }
                             }
                           },
@@ -149,8 +135,11 @@ class _Sign_upState extends State<Sign_up> {
                     ],
                   ),
                   GestureDetector(
-                    onTap: (){
-                      widget.toggleview();
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(builder: (contex) => login_ui()),
+                          (route) => false);
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,

@@ -1,5 +1,5 @@
 import 'package:flybuy_ecommerce_project/DataModel/user.dart';
-import 'package:flybuy_ecommerce_project/Screens/Authentication/authenticate.dart';
+
 
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
@@ -15,8 +15,6 @@ import 'package:flybuy_ecommerce_project/Welcome_page/layout.dart';
 import 'package:provider/provider.dart';
 
 class Wrapper extends StatefulWidget{
-   dynamic show;
-  Wrapper({this.show});
 
   static const routename = '/Wrapper';
 
@@ -33,7 +31,6 @@ class _WrapperState extends State<Wrapper> {
 
     if (user == null ) {
       return welcomepage(
-        showSignIn: widget.show,
       );
     } else {
       return

@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/AppBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Payment/Components/SaveCard.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/menu_card_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';
+import 'package:flybuy_ecommerce_project/Screens/Profile/Components/settings.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -17,6 +19,9 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    final FirebaseAuth Auth = FirebaseAuth.instance;
+    final User user = Auth.currentUser;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -48,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     child: Center(
                         child: Text(
-                      widget.email.substring(0, 1).toString().toUpperCase(),
+                      user.email.substring(0, 1).toString().toUpperCase(),
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 50,
@@ -56,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     )),
                   ),
                   Text(
-                    widget.email,
+                    user.email,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
                       fontSize: 20,
@@ -125,19 +130,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             svgName: 'assets/icons/reviews.svg',
                           ),
                         ),
+
                         InkWell(
                           onTap: (){
-                            Navigator.of(context).pushNamed(SavedCards.routename);
 
-
+                            Navigator.of(context).pushNamed(Settings.routename);
                           },
-                          child: ProfileOptions(
-                            optionName: 'Payment Options',
-                            svgName: 'assets/icons/payment.svg',
-                          ),
-                        ),
-                        InkWell(
-                          onTap: (){},
                           child: ProfileOptions(
                             optionName: 'Settings',
                             svgName: 'assets/icons/settings.svg',

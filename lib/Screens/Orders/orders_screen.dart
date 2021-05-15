@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Constants/colors.dart';
 import 'package:flybuy_ecommerce_project/Screens/Buttons/appBar.dart';
-import 'package:flybuy_ecommerce_project/Screens/Home/Featured/Featured_full_screen/components/appbar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/Components/orders_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/Components/order_card_items.dart';
 

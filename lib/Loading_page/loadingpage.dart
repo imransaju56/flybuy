@@ -19,7 +19,7 @@ class _loadingState extends State<loading> {
           context,
           MaterialPageRoute(
               builder: (context) => Wrapper(
-                    show: widget.show,
+
                   )),
           (route) => false);
     });

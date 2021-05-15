@@ -9,11 +9,11 @@ import 'package:flybuy_ecommerce_project/Screens/Authentication/log_in.dart';
 import 'package:flybuy_ecommerce_project/Screens/Authentication/sign_up.dart';
 import 'package:flybuy_ecommerce_project/Screens/Cart/cart_Screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Cart/components/total_products_amount.dart';
-import 'package:flybuy_ecommerce_project/Screens/Checkout/Components/checkout_items.dart';
 import 'package:flybuy_ecommerce_project/Screens/Checkout/checkout_screen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/components/Bottom_nav.dart';
 import 'package:flybuy_ecommerce_project/Screens/Description_page/description_page.dart';
-import 'package:flybuy_ecommerce_project/Screens/Home/Featured/product_card.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/BestSeller/BestSellerCard.dart';
+import 'package:flybuy_ecommerce_project/Screens/Home/Featured/featured_card.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/NavigationBar.dart';
 import 'package:flybuy_ecommerce_project/Screens/Orders/orders_screen.dart';
@@ -21,10 +21,12 @@ import 'package:flybuy_ecommerce_project/Screens/Payment/Components/CardOptions.
 import 'package:flybuy_ecommerce_project/Screens/Payment/Components/NewpaymentInput.dart';
 import 'package:flybuy_ecommerce_project/Screens/Payment/Components/SaveCard.dart';
 import 'package:flybuy_ecommerce_project/Screens/Payment/PaymentScreen.dart';
+import 'package:flybuy_ecommerce_project/Screens/Profile/Components/settings.dart';
 import 'package:flybuy_ecommerce_project/Screens/Profile/ProfileScreen.dart';
 import 'package:flybuy_ecommerce_project/Screens/Search/searchbar.dart';
 import 'package:flybuy_ecommerce_project/Screens/wrapper.dart';
 import 'package:flybuy_ecommerce_project/Services/auth.dart';
+import 'package:flybuy_ecommerce_project/Screens/Profile/Components/Edit%20Account/account.dart';
 import 'package:flybuy_ecommerce_project/Welcome_page/layout.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
@@ -68,22 +70,24 @@ class MyApp extends StatelessWidget {
           show: true,
         ),
         routes: {
-          Home.routename: (ctx) => Home(),
           description.routename: (ctx) => description(),
           Mycart.routename: (ctx) => Mycart(),
           CheckoutScreen.routename: (ctx) => CheckoutScreen(),
           Myorders.routename: (ctx) => Myorders(),
           ProfileScreen.routename: (ctx) => ProfileScreen(),
           loading.routename: (ctx) => loading(),
-          product_card.routename: (ctx) => product_card(),
+          FeaturedCard.routename:(ctx)=>FeaturedCard(),
           Wrapper.routename: (ctx) => Wrapper(),
           Bottom_nav.routename: (ctx) => Bottom_nav(),
-          Check_items.routename: (ctx) => Check_items(),
           PaymentScreen.routename:(ctx)=>PaymentScreen(),
           InputNew.routename:(ctx)=>InputNew(),
           SavedCards.routename:(ctx)=>SavedCards(),
           HomePage.routename:(ctx)=>HomePage(),
           total_product_amount.routename:(ctx)=>total_product_amount(),
+          BestsellerCard.routename:(ctx)=>BestsellerCard(),
+          Settings.routename:(ctx)=>Settings(),
+          NavStackItems.routename:(ctx)=>NavStackItems(),
+          AccountInfo.routename:(ctx)=>AccountInfo(),
         },
       ),
     );

@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Constants/colors.dart';
 import 'package:flybuy_ecommerce_project/DataModel/cart_model.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
-import 'package:flybuy_ecommerce_project/screens/home/Featured/Product_image.dart';
 import 'package:provider/provider.dart';
 
 class cart_card extends StatefulWidget {
