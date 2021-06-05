@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flybuy_ecommerce_project/Constants/colors.dart';
 import 'package:flybuy_ecommerce_project/Screens/Home/Home.dart';
+import 'package:flybuy_ecommerce_project/Screens/Payment/Components/cardOptions.dart';
 import 'package:flybuy_ecommerce_project/Screens/Payment/Components/menu.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -36,7 +37,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   InkWell(
                     onTap: (){
 
-                      Navigator.pushNamed(context, Home.routename);
+                      Navigator.of(context)
+                          .push(MaterialPageRoute(builder: (context) {
+                        return HomePage(amount: widget.total,);
+                      }));
 
                     },
                     child: Options(

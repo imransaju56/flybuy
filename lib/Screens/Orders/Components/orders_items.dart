@@ -38,7 +38,7 @@ class _Orders_itemsState extends State<Orders_items> {
                             height: 2,
                           ),
                           Text(
-                            'Total amount: BDT 299',
+                            'Total amount: BDT 500',
                             style: TextStyle(
                               color: theme_color,
                               fontWeight: FontWeight.w600,
@@ -78,7 +78,7 @@ class _Orders_itemsState extends State<Orders_items> {
                               ),
                               Spacer(),
                               Text(
-                                ' x2 BDT.256',
+                                ' x1BDT.500',
                                 style: TextStyle(
                                   color: theme_color,
                                   fontWeight: FontWeight.w600,

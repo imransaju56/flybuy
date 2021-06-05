@@ -25,7 +25,7 @@ class _MyordersState extends State<Myorders> {
             Column(
               children: [
 
-                for (int i = 0; i < 5; i++) Orders_items(),
+                for (int i = 0; i < 1; i++) Orders_items(),
               ],
             ),
           ],

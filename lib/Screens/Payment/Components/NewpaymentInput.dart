@@ -1,3 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/credit_card_form.dart';
 import 'package:flutter_credit_card/credit_card_model.dart';
@@ -9,12 +12,17 @@ import 'package:stripe_payment/stripe_payment.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 
 class InputNew extends StatefulWidget {
+  num amount;
+  InputNew({this.amount});
   @override
+
   _InputNewState createState() => _InputNewState();
   static const routename = '/newpayment';
+
 }
 
 class _InputNewState extends State<InputNew> {
+
   String cardNumber = '';
   String expiryDate = '';
   String cardHolderName = '';
@@ -36,6 +44,8 @@ class _InputNewState extends State<InputNew> {
   @override
   Widget build(BuildContext context) {
     var savedItems = Provider.of<SaveCreditCard>(context, listen: true);
+    final FirebaseAuth Auth = FirebaseAuth.instance;
+    final User user = Auth.currentUser;
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -111,6 +121,7 @@ class _InputNewState extends State<InputNew> {
           ),
         ),
         onPressed: () async {
+
           if (formkey.currentState.validate() && cardHolderName.isNotEmpty) {
             ProgressDialog dialog = ProgressDialog(context);
             dialog.style(
@@ -127,9 +138,13 @@ class _InputNewState extends State<InputNew> {
               expYear: int.parse(expiryDate.split('/')[1]),
             );
 
+            
+
+
+
             var response = await StripeService.payViaExistingCard(
-              amount: '2500',
-              currency: 'USD',
+              amount:'${500*100}'.toString(),
+              currency: 'BDT',
               creditCard: stripecard,
             );
 
@@ -148,6 +163,8 @@ class _InputNewState extends State<InputNew> {
                 .closed
                 .then((value) => Navigator.pop(context));
             print('Valid');
+
+            return FirebaseFirestore.instance.collection('AddUserItems').doc(user.email).collection('ItemList').doc().delete();
           } else {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
@@ -157,6 +174,7 @@ class _InputNewState extends State<InputNew> {
             );
 
             print('Invalid');
+
           }
         },
       ),

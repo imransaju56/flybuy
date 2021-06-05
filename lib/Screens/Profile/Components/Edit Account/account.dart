@@ -108,6 +108,8 @@ class _AccountInfoState extends State<AccountInfo> {
                                     borderSide: BorderSide(
                                         color: Color.fromRGBO(216, 216, 216, 1))),
                                 labelText: 'Enter Your Name',
+                                hintText: snapName,
+
                                 labelStyle: TextStyle(
                                   fontSize: 12,
                                 ),
@@ -128,6 +130,7 @@ class _AccountInfoState extends State<AccountInfo> {
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         color: Color.fromRGBO(216, 216, 216, 1))),
+                                hintText: snapmobile,
                                 labelText: 'Mobile No',
                                 labelStyle: TextStyle(
                                   fontSize: 12,
@@ -149,6 +152,7 @@ class _AccountInfoState extends State<AccountInfo> {
                                 enabledBorder: UnderlineInputBorder(
                                     borderSide: BorderSide(
                                         color: Color.fromRGBO(216, 216, 216, 1))),
+                                hintText: addRess,
                                 labelText: 'Address',
                                 labelStyle: TextStyle(
                                   fontSize: 12,

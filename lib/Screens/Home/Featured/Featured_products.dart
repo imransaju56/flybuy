@@ -38,9 +38,6 @@ class _featuredState extends State<featured> {
             ),
           ),
         ),
-
-
-
       ],
     );
   }

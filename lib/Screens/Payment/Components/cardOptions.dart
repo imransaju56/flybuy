@@ -6,11 +6,13 @@ import 'package:progress_dialog/progress_dialog.dart';
 
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
 
   @override
   HomePageState createState() => HomePageState();
   static const routename='/Home';
+  num amount;
+  HomePage({this.amount});
+
 }
 
 class HomePageState extends State<HomePage> {
@@ -33,7 +35,13 @@ class HomePageState extends State<HomePage> {
 
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, InputNew.routename);
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) {
+
+
+
+          return InputNew(amount: widget.amount,);
+        }));
 
         break;
       case 1:

@@ -10,7 +10,6 @@ import 'package:flybuy_ecommerce_project/Screens/Home/SeeAlso/SeeAlsoCard.dart';
 import 'package:flybuy_ecommerce_project/Screens/Search/searchbar.dart';
 import 'package:flybuy_ecommerce_project/constants/SizeConfig.dart';
 import 'package:flybuy_ecommerce_project/constants/colors.dart';
-
 import 'file:///G:/Installedfiles/Androidstudio/flutterprojects/flybuy_ecommerce_project/lib/screens/home/Categories/Categories.dart';
 import 'package:flybuy_ecommerce_project/screens/home/Home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,7 +36,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          margin: EdgeInsets.all(14),
+          margin: EdgeInsets.only(left: 15,right: 15),
           child: Column(
             children: [
               InkWell(
@@ -52,6 +51,9 @@ class _HomeState extends State<Home> {
                 child: ListView(
                   shrinkWrap: true,
                   children: [
+                    SizedBox(
+                      height: 15,
+                    ),
                     slider(),
                     SizedBox(
                       height: 15,
